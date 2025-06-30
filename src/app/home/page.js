@@ -65,7 +65,7 @@ export default function Home() {
           </Link>
 
           <div className="flex flex-col md:flex-row items-center gap-4">
-            {["home2.jpg", "home3.jpg", "home4.jpg"].map((img, idx) => (
+            {["home2.jpeg", "home3.jpeg", "home4.jpg"].map((img, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 40 }}
@@ -78,7 +78,7 @@ export default function Home() {
                   alt={`card-image-${idx}`}
                   width={500}
                   height={300}
-                  className="w-full h-56 object-cover rounded-md"
+                  className="w-100 h-56 object-cover rounded-md"
                 />
               </motion.div>
             ))}
@@ -118,7 +118,7 @@ export default function Home() {
           transition={{ duration: 1 }}
         >
           <Image
-            src="/all-images/home/img3.jpeg"
+            src="/all-images/home/img1.jpeg"
             alt="card-image2"
             width={1500}
             height={100}
@@ -141,7 +141,7 @@ export default function Home() {
           transition={{ duration: 1 }}
         >
           <Image
-            src="/all-images/home/img2.jpeg"
+            src="/all-images/home/img2.jpg"
             alt="card-image2"
             width={500}
             height={300}
