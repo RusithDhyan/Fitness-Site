@@ -53,16 +53,16 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="flex flex-row gap-10 ">
-          <ul className="hidden md:flex flex-row justify-center items-center gap-3 text-xs sm:text-sm md:text-base lg:text-md xl:text-md ">
+          <ul className="hidden md:flex flex-row justify-center items-center gap-3 text-xs sm:text-sm md:text-base lg:text-md xl:text-md pr-4">
             <Link href="/">Home</Link>
-            <Link href="/fitness-programs">Fitness Programs</Link>
+            <Link href="/fitness-program">Fitness Programs</Link>
             <Link href="/weekly-plan">Weekly Plan</Link>
             <Link href="/daily-workouts">Daily Workouts</Link>
             <Link href="/health-benifits">Health Benifits</Link>
             <Link href="/blogs">Blogs</Link>
             <Link href="/contact">Contact</Link>
           </ul>
-          <Link href="/booking" className="text-sm sm:text-md">
+          {/* <Link href="/booking" className="text-sm sm:text-md">
             <button
               className="relative text-black p-1 border-b-2 border-transparent"
               onMouseEnter={activateHover}
@@ -77,7 +77,7 @@ export default function Navbar() {
                 }`}
               ></span>
             </button>
-          </Link>
+          </Link> */}
           {/* <Menu className="text-blue-400" /> */}
           <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? null : <AlignLeft size={28} className="" />}
