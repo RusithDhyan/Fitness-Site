@@ -64,7 +64,7 @@ export default function BlogPage() {
           height={100}
           className="object-cover w-full h-100"
         />
-        <h1 className="absolute inset-0 flex items-end justify-center text-3xl md:text-5xl text-white pb-4 font-bold text-center px-4">
+        <h1 className="absolute inset-0 flex items-center justify-center text-3xl md:text-5xl text-white pb-4 font-bold text-center px-4">
           Blogs
         </h1>
       </div>
@@ -95,7 +95,7 @@ export default function BlogPage() {
                   alt={blog.title}
                   layout="fill"
                   objectFit="cover"
-                  className=" transition-transform duration-300 group-hover:scale-105"
+                  className=" transition-transform duration-300 group-hover:scale-105 rounded-md"
                 />
                 </Link>
               </div>
