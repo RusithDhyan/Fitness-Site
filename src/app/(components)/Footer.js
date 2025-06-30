@@ -40,7 +40,7 @@ export default function Footer() {
             <h1 className="font-semibold">Contact Us</h1>
             <div className="flex items-center justify-center gap-2 mt-2">
               <Mail width={20} height={20} color="#817e7e" />
-              <span className="text-[#817e7e]">sales@serendibhotel.com</span>
+              <span className="text-[#817e7e]">ucp@physiotherapy.com</span>
             </div>
             <div className="flex items-center justify-center gap-2 mt-2">
               <Phone width={20} height={20} color="#817e7e" />
