@@ -1,29 +1,31 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Contact() {
   const [chooseIndex, setChooseIndex] = useState(0);
 
-  const data = [
-    { name: "Email", value: "contact@serendib.com" },
-    { name: "Phone", value: "+265 123 456 789" },
-  ];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setChooseIndex((prev) => (prev + 1) % chooseItems.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const chooseItems = [
     {
       title: "D.K Amarathunga",
-      desc:"UCP/2020/535",
+      desc: "UCP/2020/535",
       img: "/all-images/about/img1.jpeg",
     },
     {
       title: "K.J.Y.P Jayasooriya",
-      desc:"UCP/2020/536",
+      desc: "UCP/2020/536",
       img: "/all-images/about/img2.jpeg",
     },
     {
       title: "S.A.L Malithi",
-      desc:"UCP/2020/538",
+      desc: "UCP/2020/538",
       img: "/all-images/about/img3.jpeg",
     },
   ];
@@ -96,7 +98,7 @@ function Contact() {
                 alt={chooseItems[chooseIndex].title}
                 width={1500}
                 height={200}
-                className="mb-4 h-48 object-cover rounded"
+                className="mb-4 h-auto object-cover rounded"
               />
               <h3 className="text-xl font-semibold mb-2">
                 {chooseItems[chooseIndex].title}
@@ -108,7 +110,6 @@ function Contact() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }
