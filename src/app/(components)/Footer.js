@@ -61,7 +61,7 @@ export default function Footer() {
           <h1 className="text-sm sm:text-base md:text-lg">
             Join our newsletter for the latest updates!
           </h1>
-          <div className="flex flex-col sm:flex-row gap-2 mt-3 w-full max-w-xs">
+          <div className="flex flex-col sm:flex-row gap-2 my-3 w-full max-w-xs">
             <input
               className="bg-gray-300 text-gray-700 p-2 w-full rounded-md sm:rounded-none"
               placeholder="Enter your name"
