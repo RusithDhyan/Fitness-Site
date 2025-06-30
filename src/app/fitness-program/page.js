@@ -1,47 +1,49 @@
 "use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const programs = [
+  
   {
-    title: "Beginner-Friendly Fitness",
-    duration: "4 Weeks",
+    title: "Day 1 – Muscular Strength (Gym-Based Upper Body)",
+    duration: "1 Day",
     gif: "/assets/animations/1.gif",
     description:
-      "This low-impact program helps you build strength and stamina with physiotherapy-safe exercises. Ideal for those new to fitness, older adults, or those returning after a break.",
-    focus: ["Mobility", "Core stability", "Gentle strength building"],
+      "Bench press, lat pulldown, shoulder press, and more — all focused on building upper body power. Includes a dynamic warm-up and cool-down.",
+    focus: ["Gym", "Upper Body", "Power"],
   },
   {
-    title: "Post-Injury Recovery Plan",
-    duration: "6 Weeks",
+    title: "Day 2 – Cardiopulmonary Endurance (Zumba Session)",
+    duration: "1 Day",
     gif: "/assets/animations/2.gif",
     description:
-      "Tailored for individuals recovering from minor injuries or managing joint pain. Each session includes guided mobility, functional movements, and pain-prevention strategies.",
-    focus: ["Joint mobility", "Controlled movement", "Pain relief"],
+      "A high-energy Zumba session that keeps your heart pumping while you burn calories to rhythmic dance routines.",
+    focus: ["Cardio", "Zumba", "Endurance"],
   },
   {
-    title: "Full-Body Flexibility",
-    duration: "3 Weeks",
-    gif: "/assets/animations/5.gif",
-    description:
-      "Improve range of motion, posture, and recovery with this guided stretch program. Excellent for anyone looking to improve flexibility and reduce stiffness.",
-    focus: ["Stretching routines", "Posture alignment", "Relaxation"],
-  },
-  {
-    title: "Weight Loss & Wellness",
-    duration: "5 Weeks",
+    title: "Day 3 – Muscular Endurance (Pilates-Based)",
+    duration: "1 Day",
     gif: "/assets/animations/3.gif",
     description:
-      "A balanced blend of cardio, light resistance, and mindful eating support. This program is designed to promote fat burning while maintaining joint-friendly exercise practices.",
-    focus: ["Fat burning", "Cardio endurance", "Body composition"],
+      "Pilates movements that increase muscular stamina and core strength with low-impact control.",
+    focus: ["Pilates", "Core", "Endurance"],
   },
   {
-    title: "Strength & Balance for Seniors",
-    duration: "6 Weeks",
+    title: "Day 4 – Flexibility (Yoga-Based)",
+    duration: "1 Day",
+    gif: "/assets/animations/5.gif",
+    description:
+      "Yoga poses like Downward Dog, Cobra, and Pigeon that enhance flexibility and calm the mind.",
+    focus: ["Yoga", "Flexibility", "Mindfulness"],
+  },
+  {
+    title: "Day 5 – Body Composition (HIIT-Based)",
+    duration: "1 Day",
     gif: "/assets/animations/4.gif",
     description:
-      "Designed with older adults in mind, this program improves stability, prevents falls, and builds functional strength safely.",
-    focus: ["Balance training", "Leg & core strength", "Everyday movements"],
+      "An intense HIIT session that focuses on fat burning through compound movements and cardio bursts.",
+    focus: ["HIIT", "Fat Burn", "Metabolism"],
   },
 ];
 
