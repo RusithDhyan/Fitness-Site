@@ -23,7 +23,6 @@ export default function Footer() {
 
         <div className="flex flex-row items-center justify-between gap-10 text-sm sm:text-base p-2">
           <div className="flex flex-col items-center justify-center gap-2">
-            <Link href="/">Home</Link>
             <Link href="/our-collections">Fitness Programs</Link>
             <Link href="/experiences">Weekly Plan</Link>
             <Link href="/offers">Daily Workouts</Link>
@@ -31,9 +30,8 @@ export default function Footer() {
           <div className="flex flex-col items-center justify-center gap-2">
             <Link href="/blogs">Health Benifits</Link>
             <Link href="/gallery">Blogs</Link>
-                        <Link href="/about">About</Link>
+                        <Link href="/about">About Us</Link>
 
-            <Link href="/contact">Contact</Link>
           </div>
         </div>
 
@@ -78,7 +76,7 @@ export default function Footer() {
       <div className="w-full bg-black text-white px-5 py-2 flex flex-col sm:flex-row items-center justify-center gap-1 text-center text-xs sm:text-sm">
         <Copyright className="w-4 sm:w-5" />
         <span>
-          2025 Serandib. All Rights Reserved | Designed & Developed By Perl Vista
+          2025 Physiotherapy. All Rights Reserved | Designed & Developed By Our Team
         </span>
       </div>
     </div>

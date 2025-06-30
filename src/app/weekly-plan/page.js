@@ -1,134 +1,106 @@
+"use client";
 
-import Image from "next/image";
+import { motion } from "framer-motion";
 
-function Contact() {
+const weeklyPlan = [
+  {
+    day: "Monday",
+    title: "Cardio Kickstart",
+    activities: [
+      "20 minutes brisk walking",
+      "5 minutes jumping jacks or low-impact step-ups",
+      "Cool-down with light stretching",
+    ],
+  },
+  {
+    day: "Tuesday",
+    title: "Strength Foundations",
+    activities: [
+      "Bodyweight squats – 3 sets of 10",
+      "Wall push-ups – 3 sets of 8",
+      "Resistance band rows – 2 sets of 12",
+    ],
+  },
+  {
+    day: "Wednesday",
+    title: "Flexibility Focus",
+    activities: [
+      "10-minute guided stretching",
+      "Cat-cow spinal mobility",
+      "Hamstring and quad stretches",
+    ],
+  },
+  {
+    day: "Thursday",
+    title: "Endurance Builder",
+    activities: [
+      "Lunges – 3 sets of 12 per leg",
+      "Plank – hold for 30 seconds (repeat x2)",
+      "Mountain climbers – slow pace, 30 sec rounds",
+    ],
+  },
+  {
+    day: "Friday",
+    title: "Core & Balance",
+    activities: [
+      "Bird-dogs – 2 sets of 10 per side",
+      "Single-leg balance – hold 30 seconds each leg",
+      "Side planks – 20 seconds each side",
+    ],
+  },
+  {
+    day: "Saturday",
+    title: "Active Recovery",
+    activities: [
+      "Gentle yoga or tai chi for 20 minutes",
+      "Slow walking in nature",
+      "Breathing exercises or meditation",
+    ],
+  },
+  {
+    day: "Sunday",
+    title: "Rest & Reflect",
+    activities: [
+      "Full rest (or gentle mobility)",
+      "Reflect on progress in a journal",
+      "Plan for the week ahead",
+    ],
+  },
+];
 
-  const data = [
-    { name: "Email", value: "contact@serendib.com" },
-    { name: "Phone", value: "+265 123 456 789" },
-  ];
-
+export default function WeeklyPlan() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Header image */}
-      <div className="w-full relative">
-        <Image
-          src="/all-images/contact/image.jpg"
-          alt="contact-img"
-          width={1500}
-          height={300}
-          className="object-cover w-full h-100"
-        />
-        <h1 className="absolute inset-0 flex items-center justify-center text-3xl md:text-5xl text-white pb-4 font-bold">
-          Contact Us
-        </h1>
-      </div>
+    <div className="max-w-screen-xl mx-auto px-4 sm:px-10 py-16">
+      <motion.h1
+        className="text-3xl md:text-5xl font-bold text-center mb-10 text-orange-600"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        Weekly Fitness Plan
+      </motion.h1>
 
-      {/* Title & Intro */}
-      <div className="flex flex-col items-center justify-center gap-3 mt-10 px-4 md:px-20 text-center">
-        <h1 className="text-xl md:text-2xl font-semibold">
-          Contact Our Team – We're Here to Assist You!
-        </h1>
-        <p className="font-extralight max-w-3xl text-sm md:text-base">
-          Have questions about our fitness programs or physiotherapy guidance?
-          We’re here to help you on your journey to better health and movement.
-          Whether you're looking for personalized exercise plans, support during
-          recovery, or just need advice on where to begin, feel free to reach
-          out.
-          <br />
-          Our team is happy to answer your inquiries, schedule consultations, or
-          provide more information about our services. Simply fill out the form
-          below or contact us using the details provided. Let’s take the next
-          step toward a healthier, stronger you — together.
-        </p>
-      </div>
-
-      {/* Contact Info Section */}
-      <div className="flex flex-col items-center mt-10 px-4">
-        <h2 className="text-xl md:text-2xl font-semibold mb-4">Reservations</h2>
-        <div className="flex flex-col md:flex-row items-center gap-4 text-sm md:text-lg">
-          {data.map((item, index) => (
-            <div key={index}>
-              <span className="font-semibold">{item.name}:</span> {item.value}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Form Section */}
-      <div className="mx-4 md:mx-10 mt-10 p-6 md:pt-10 flex flex-col items-center">
-        {/* <ContactForm/> */}
-
-        {/* <form className="space-y-6" onSubmit={handleSubmit}>
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="w-full">
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                className="mt-1 block w-full border border-gray-300 shadow-sm p-2"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="w-full">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="mt-1 block w-full border border-gray-300 shadow-sm p-2"
-                placeholder="you@example.com"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-
-          <div>
-            <label
-              htmlFor="question"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Ask Any Questions
-            </label>
-            <textarea
-              name="question"
-              id="question"
-              rows="5"
-              className="mt-1 block w-full border border-gray-300 shadow-sm p-2"
-              placeholder="Type your question here..."
-              value={formData.question}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-gray-500 text-white py-2 px-4 hover:bg-gray-600 transition"
+      <div className="grid md:grid-cols-2 gap-8">
+        {weeklyPlan.map((dayPlan, index) => (
+          <motion.div
+            key={index}
+            className="bg-white rounded-lg shadow-lg border-l-4 border-orange-500 p-6"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            viewport={{ once: true }}
           >
-            Submit
-          </button>
-        </form> */}
+            <h2 className="text-xl md:text-2xl font-semibold text-gray-800">
+              {dayPlan.day}: {dayPlan.title}
+            </h2>
+            <ul className="list-disc list-inside mt-3 text-gray-700 space-y-1">
+              {dayPlan.activities.map((activity, idx) => (
+                <li key={idx}>{activity}</li>
+              ))}
+            </ul>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
 }
-
-export default Contact;

@@ -1,134 +1,122 @@
+"use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
-function Contact() {
-
-  const data = [
-    { name: "Email", value: "contact@serendib.com" },
-    { name: "Phone", value: "+265 123 456 789" },
-  ];
-
+export default function HealthBenefits() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Header image */}
-      <div className="w-full relative">
-        <Image
-          src="/all-images/contact/image.jpg"
-          alt="contact-img"
-          width={1500}
-          height={300}
-          className="object-cover w-full h-100"
-        />
-        <h1 className="absolute inset-0 flex items-center justify-center text-3xl md:text-5xl text-white pb-4 font-bold">
-          Contact Us
-        </h1>
+    <div className="w-full px-4 sm:px-10 max-w-screen-2xl mx-auto py-16">
+      <motion.h1
+        className="text-3xl md:text-5xl font-bold text-center mb-10"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        Health Benefits of Our Fitness Programs
+      </motion.h1>
+
+      <div className="grid md:grid-cols-2 gap-10">
+        {/* Benefit 1 */}
+        <motion.div
+          className="flex flex-col gap-4"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <Image
+            src="/all-images/health-benifits/img1.jpeg"
+            alt="Cardiovascular Health"
+            width={800}
+            height={600}
+            className="rounded-md w-full h-[250px] object-cover"
+          />
+          <h2 className="text-xl md:text-2xl font-semibold text-orange-600">
+            Boosted Cardiovascular Health
+          </h2>
+          <p className="text-gray-700 text-justify">
+            Regular cardio-focused routines increase heart efficiency, improve blood circulation, and reduce the risk of hypertension, stroke, and heart disease. Our exercises ensure safe, progressive heart health development even for beginners and recovery patients.
+          </p>
+        </motion.div>
+
+        {/* Benefit 2 */}
+        <motion.div
+          className="flex flex-col gap-4"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <Image
+            src="/all-images/health-benifits/img2.jpeg"
+            alt="Strength"
+            width={800}
+            height={600}
+            className="rounded-md w-full h-[250px] object-cover"
+          />
+          <h2 className="text-xl md:text-2xl font-semibold text-orange-600">
+            Increased Muscle Strength & Stability
+          </h2>
+          <p className="text-gray-700 text-justify">
+            Targeted strength-building routines improve core stability, joint support, and bone density. They are designed with physiotherapy principles to prevent injury and support long-term structural health—perfect for all fitness levels.
+          </p>
+        </motion.div>
+
+        {/* Benefit 3 */}
+        <motion.div
+          className="flex flex-col gap-4"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <Image
+            src="/all-images/health-benifits/img3.jpeg"
+            alt="Flexibility"
+            width={800}
+            height={600}
+            className="rounded-md w-full h-[250px] object-cover"
+          />
+          <h2 className="text-xl md:text-2xl font-semibold text-orange-600">
+            Enhanced Flexibility & Posture
+          </h2>
+          <p className="text-gray-700 text-justify">
+            Our flexibility-focused sessions reduce stiffness, correct muscle imbalances, and improve range of motion. This reduces chronic pain, boosts posture, and helps you move better throughout your daily life.
+          </p>
+        </motion.div>
+
+        {/* Benefit 4 */}
+        <motion.div
+          className="flex flex-col gap-4"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <Image
+            src="/all-images/health-benifits/img4.jpeg"
+            alt="Mental Health"
+            width={800}
+            height={600}
+            className="rounded-md w-full h-[250px] object-cover"
+          />
+          <h2 className="text-xl md:text-2xl font-semibold text-orange-600">
+            Mental Wellness & Stress Relief
+          </h2>
+          <p className="text-gray-700 text-justify">
+            Exercise isn’t just physical—it’s emotional. Daily movement enhances mood, reduces anxiety and depression, and improves sleep quality. Our calm, guided programs are crafted to bring both body and mind into harmony.
+          </p>
+        </motion.div>
       </div>
 
-      {/* Title & Intro */}
-      <div className="flex flex-col items-center justify-center gap-3 mt-10 px-4 md:px-20 text-center">
-        <h1 className="text-xl md:text-2xl font-semibold">
-          Contact Our Team – We're Here to Assist You!
-        </h1>
-        <p className="font-extralight max-w-3xl text-sm md:text-base">
-          Have questions about our fitness programs or physiotherapy guidance?
-          We’re here to help you on your journey to better health and movement.
-          Whether you're looking for personalized exercise plans, support during
-          recovery, or just need advice on where to begin, feel free to reach
-          out.
-          <br />
-          Our team is happy to answer your inquiries, schedule consultations, or
-          provide more information about our services. Simply fill out the form
-          below or contact us using the details provided. Let’s take the next
-          step toward a healthier, stronger you — together.
-        </p>
-      </div>
-
-      {/* Contact Info Section */}
-      <div className="flex flex-col items-center mt-10 px-4">
-        <h2 className="text-xl md:text-2xl font-semibold mb-4">Reservations</h2>
-        <div className="flex flex-col md:flex-row items-center gap-4 text-sm md:text-lg">
-          {data.map((item, index) => (
-            <div key={index}>
-              <span className="font-semibold">{item.name}:</span> {item.value}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Form Section */}
-      <div className="mx-4 md:mx-10 mt-10 p-6 md:pt-10 flex flex-col items-center">
-        {/* <ContactForm/> */}
-
-        {/* <form className="space-y-6" onSubmit={handleSubmit}>
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="w-full">
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                className="mt-1 block w-full border border-gray-300 shadow-sm p-2"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="w-full">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="mt-1 block w-full border border-gray-300 shadow-sm p-2"
-                placeholder="you@example.com"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-
-          <div>
-            <label
-              htmlFor="question"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Ask Any Questions
-            </label>
-            <textarea
-              name="question"
-              id="question"
-              rows="5"
-              className="mt-1 block w-full border border-gray-300 shadow-sm p-2"
-              placeholder="Type your question here..."
-              value={formData.question}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-gray-500 text-white py-2 px-4 hover:bg-gray-600 transition"
-          >
-            Submit
+      <div className="text-center mt-12">
+        <Link href="/daily-workouts">
+          <button className="bg-orange-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-orange-700 transition duration-300">
+            View Workout Plans
           </button>
-        </form> */}
+        </Link>
       </div>
     </div>
   );
 }
-
-export default Contact;

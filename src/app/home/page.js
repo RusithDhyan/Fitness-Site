@@ -37,7 +37,7 @@ export default function Home() {
             alt="card-image1"
             width={1500}
             height={100}
-            className=" w-80 h-100 object-cover"
+            className=" w-80 h-100 object-cover rounded-md"
           />
         </motion.div>
 
@@ -78,7 +78,7 @@ export default function Home() {
                   alt={`card-image-${idx}`}
                   width={500}
                   height={300}
-                  className="w-full h-56 object-cover"
+                  className="w-full h-56 object-cover rounded-md"
                 />
               </motion.div>
             ))}
@@ -122,7 +122,7 @@ export default function Home() {
             alt="card-image2"
             width={1500}
             height={100}
-            className="object-cover w-200 h-100"
+            className="object-cover w-200 h-100 rounded-md"
           />
         </motion.div>
       </motion.div>
@@ -145,7 +145,7 @@ export default function Home() {
             alt="card-image2"
             width={500}
             height={300}
-            className="w-150 h-100 object-cover"
+            className="w-150 h-100 object-cover rounded-md"
           />
         </motion.div>
 

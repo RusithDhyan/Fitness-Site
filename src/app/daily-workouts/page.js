@@ -1,134 +1,98 @@
+"use client";
 
-import Image from "next/image";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
-function Contact() {
+const workouts = [
+  {
+    day: "Monday",
+    focus: "Cardiovascular Endurance",
+    description:
+      "Start the week with heart-healthy activities such as brisk walking, cycling, or light jogging. Cardiovascular workouts improve lung capacity, circulation, and overall stamina. Even 20–30 minutes can make a difference.",
+    tips: "Try interval walking — alternate 2 minutes of fast walking with 1 minute of normal pace for 20 minutes.",
+  },
+  {
+    day: "Tuesday",
+    focus: "Muscle Strength",
+    description:
+      "Build foundational strength with bodyweight exercises like squats, push-ups (wall or floor), and resistance band workouts. These movements enhance joint stability and posture.",
+    tips: "Focus on form over reps. Start with 2 sets of 8–10 reps for each movement.",
+  },
+  {
+    day: "Wednesday",
+    focus: "Flexibility & Mobility",
+    description:
+      "Recover and restore your body midweek with gentle stretching routines, yoga poses, and mobility drills. This improves range of motion and prevents stiffness.",
+    tips: "Hold each stretch for 20–30 seconds without bouncing. Breathe deeply and relax into each movement.",
+  },
+  {
+    day: "Thursday",
+    focus: "Muscular Endurance",
+    description:
+      "Train your muscles to work longer without fatigue. Use light weights or bodyweight for higher repetitions (15–20 reps) with minimal rest between sets.",
+    tips: "Combine exercises like lunges, step-ups, and band rows into a circuit for 3 rounds.",
+  },
+  {
+    day: "Friday",
+    focus: "Core & Balance",
+    description:
+      "A strong core supports your spine and prevents injuries. Add planks, bird-dogs, and balance-focused exercises to improve your center of gravity and coordination.",
+    tips: "Try a 30-second plank, followed by 10 bird-dogs per side and single-leg stands for balance.",
+  },
+  {
+    day: "Saturday",
+    focus: "Active Recovery",
+    description:
+      "Engage in gentle movements like walking, light swimming, or tai chi. This promotes blood flow, reduces soreness, and helps the body recover from the week’s workouts.",
+    tips: "Enjoy nature walks or do a 15-minute mobility session indoors.",
+  },
+  {
+    day: "Sunday",
+    focus: "Rest & Mindfulness",
+    description:
+      "Give your body a chance to fully rest and regenerate. Practice breathing exercises or guided meditation. Rest is a crucial part of your progress.",
+    tips: "Spend 10–15 minutes reflecting, journaling, or doing slow deep breathing.",
+  },
+];
 
-  const data = [
-    { name: "Email", value: "contact@serendib.com" },
-    { name: "Phone", value: "+265 123 456 789" },
-  ];
-
+export default function DailyWorkouts() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Header image */}
-      <div className="w-full relative">
-        <Image
-          src="/all-images/contact/image.jpg"
-          alt="contact-img"
-          width={1500}
-          height={300}
-          className="object-cover w-full h-100"
-        />
-        <h1 className="absolute inset-0 flex items-center justify-center text-3xl md:text-5xl text-white pb-4 font-bold">
-          Contact Us
-        </h1>
-      </div>
+    <div className="max-w-screen-xl mx-auto px-4 sm:px-10 py-16">
+      <motion.h1
+        className="text-3xl md:text-5xl font-bold text-center mb-10"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        Your Guided Daily Workout Plan
+      </motion.h1>
 
-      {/* Title & Intro */}
-      <div className="flex flex-col items-center justify-center gap-3 mt-10 px-4 md:px-20 text-center">
-        <h1 className="text-xl md:text-2xl font-semibold">
-          Contact Our Team – We're Here to Assist You!
-        </h1>
-        <p className="font-extralight max-w-3xl text-sm md:text-base">
-          Have questions about our fitness programs or physiotherapy guidance?
-          We’re here to help you on your journey to better health and movement.
-          Whether you're looking for personalized exercise plans, support during
-          recovery, or just need advice on where to begin, feel free to reach
-          out.
-          <br />
-          Our team is happy to answer your inquiries, schedule consultations, or
-          provide more information about our services. Simply fill out the form
-          below or contact us using the details provided. Let’s take the next
-          step toward a healthier, stronger you — together.
-        </p>
-      </div>
-
-      {/* Contact Info Section */}
-      <div className="flex flex-col items-center mt-10 px-4">
-        <h2 className="text-xl md:text-2xl font-semibold mb-4">Reservations</h2>
-        <div className="flex flex-col md:flex-row items-center gap-4 text-sm md:text-lg">
-          {data.map((item, index) => (
-            <div key={index}>
-              <span className="font-semibold">{item.name}:</span> {item.value}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Form Section */}
-      <div className="mx-4 md:mx-10 mt-10 p-6 md:pt-10 flex flex-col items-center">
-        {/* <ContactForm/> */}
-
-        {/* <form className="space-y-6" onSubmit={handleSubmit}>
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="w-full">
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                className="mt-1 block w-full border border-gray-300 shadow-sm p-2"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="w-full">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="mt-1 block w-full border border-gray-300 shadow-sm p-2"
-                placeholder="you@example.com"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-
-          <div>
-            <label
-              htmlFor="question"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Ask Any Questions
-            </label>
-            <textarea
-              name="question"
-              id="question"
-              rows="5"
-              className="mt-1 block w-full border border-gray-300 shadow-sm p-2"
-              placeholder="Type your question here..."
-              value={formData.question}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-gray-500 text-white py-2 px-4 hover:bg-gray-600 transition"
+      <div className="grid md:grid-cols-2 gap-8">
+        {workouts.map((workout, index) => (
+          <motion.div
+            key={index}
+            className="bg-white p-6 shadow-md rounded-md border-l-4 border-orange-500"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
           >
-            Submit
+            <h2 className="text-xl md:text-2xl font-semibold text-orange-600">
+              {workout.day}: {workout.focus}
+            </h2>
+            <p className="text-gray-700 mt-2">{workout.description}</p>
+            <p className="mt-2 italic text-sm text-gray-600">💡 {workout.tips}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="text-center mt-12">
+        <Link href="/health-benifits">
+          <button className="bg-orange-600 text-white px-6 py-3 rounded-md text-lg hover:bg-orange-700 transition duration-300">
+            Learn the Benefits of These Workouts
           </button>
-        </form> */}
+        </Link>
       </div>
     </div>
   );
 }
-
-export default Contact;

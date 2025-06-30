@@ -1,134 +1,80 @@
+"use client";
 
-import Image from "next/image";
+import { motion } from "framer-motion";
 
-function Contact() {
+const programs = [
+  {
+    title: "Beginner-Friendly Fitness",
+    duration: "4 Weeks",
+    description:
+      "This low-impact program helps you build strength and stamina with physiotherapy-safe exercises. Ideal for those new to fitness, older adults, or those returning after a break.",
+    focus: ["Mobility", "Core stability", "Gentle strength building"],
+  },
+  {
+    title: "Post-Injury Recovery Plan",
+    duration: "6 Weeks",
+    description:
+      "Tailored for individuals recovering from minor injuries or managing joint pain. Each session includes guided mobility, functional movements, and pain-prevention strategies.",
+    focus: ["Joint mobility", "Controlled movement", "Pain relief"],
+  },
+  {
+    title: "Full-Body Flexibility",
+    duration: "3 Weeks",
+    description:
+      "Improve range of motion, posture, and recovery with this guided stretch program. Excellent for anyone looking to improve flexibility and reduce stiffness.",
+    focus: ["Stretching routines", "Posture alignment", "Relaxation"],
+  },
+  {
+    title: "Weight Loss & Wellness",
+    duration: "5 Weeks",
+    description:
+      "A balanced blend of cardio, light resistance, and mindful eating support. This program is designed to promote fat burning while maintaining joint-friendly exercise practices.",
+    focus: ["Fat burning", "Cardio endurance", "Body composition"],
+  },
+  {
+    title: "Strength & Balance for Seniors",
+    duration: "6 Weeks",
+    description:
+      "Designed with older adults in mind, this program improves stability, prevents falls, and builds functional strength safely.",
+    focus: ["Balance training", "Leg & core strength", "Everyday movements"],
+  },
+];
 
-  const data = [
-    { name: "Email", value: "contact@serendib.com" },
-    { name: "Phone", value: "+265 123 456 789" },
-  ];
-
+export default function FitnessPrograms() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Header image */}
-      <div className="w-full relative">
-        <Image
-          src="/all-images/contact/image.jpg"
-          alt="contact-img"
-          width={1500}
-          height={300}
-          className="object-cover w-full h-100"
-        />
-        <h1 className="absolute inset-0 flex items-center justify-center text-3xl md:text-5xl text-white pb-4 font-bold">
-          Contact Us
-        </h1>
-      </div>
+    <div className="max-w-screen-xl mx-auto px-4 sm:px-10 py-16">
+      <motion.h1
+        className="text-3xl md:text-5xl font-bold text-center text-orange-600 mb-10"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        Our Fitness Programs
+      </motion.h1>
 
-      {/* Title & Intro */}
-      <div className="flex flex-col items-center justify-center gap-3 mt-10 px-4 md:px-20 text-center">
-        <h1 className="text-xl md:text-2xl font-semibold">
-          Contact Our Team – We're Here to Assist You!
-        </h1>
-        <p className="font-extralight max-w-3xl text-sm md:text-base">
-          Have questions about our fitness programs or physiotherapy guidance?
-          We’re here to help you on your journey to better health and movement.
-          Whether you're looking for personalized exercise plans, support during
-          recovery, or just need advice on where to begin, feel free to reach
-          out.
-          <br />
-          Our team is happy to answer your inquiries, schedule consultations, or
-          provide more information about our services. Simply fill out the form
-          below or contact us using the details provided. Let’s take the next
-          step toward a healthier, stronger you — together.
-        </p>
-      </div>
-
-      {/* Contact Info Section */}
-      <div className="flex flex-col items-center mt-10 px-4">
-        <h2 className="text-xl md:text-2xl font-semibold mb-4">Reservations</h2>
-        <div className="flex flex-col md:flex-row items-center gap-4 text-sm md:text-lg">
-          {data.map((item, index) => (
-            <div key={index}>
-              <span className="font-semibold">{item.name}:</span> {item.value}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Form Section */}
-      <div className="mx-4 md:mx-10 mt-10 p-6 md:pt-10 flex flex-col items-center">
-        {/* <ContactForm/> */}
-
-        {/* <form className="space-y-6" onSubmit={handleSubmit}>
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="w-full">
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                className="mt-1 block w-full border border-gray-300 shadow-sm p-2"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="w-full">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="mt-1 block w-full border border-gray-300 shadow-sm p-2"
-                placeholder="you@example.com"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-
-          <div>
-            <label
-              htmlFor="question"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Ask Any Questions
-            </label>
-            <textarea
-              name="question"
-              id="question"
-              rows="5"
-              className="mt-1 block w-full border border-gray-300 shadow-sm p-2"
-              placeholder="Type your question here..."
-              value={formData.question}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-gray-500 text-white py-2 px-4 hover:bg-gray-600 transition"
+      <div className="grid md:grid-cols-2 gap-8">
+        {programs.map((program, index) => (
+          <motion.div
+            key={index}
+            className="bg-white p-6 rounded-md shadow-md border-l-4 border-orange-500"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            viewport={{ once: true }}
           >
-            Submit
-          </button>
-        </form> */}
+            <h2 className="text-xl md:text-2xl font-semibold text-gray-800">
+              {program.title}
+            </h2>
+            <p className="text-sm text-gray-500 mb-2">{program.duration} Program</p>
+            <p className="text-gray-700 mb-4">{program.description}</p>
+            <ul className="list-disc list-inside text-sm text-gray-600">
+              {program.focus.map((item, idx) => (
+                <li key={idx}>✓ {item}</li>
+              ))}
+            </ul>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
 }
-
-export default Contact;
