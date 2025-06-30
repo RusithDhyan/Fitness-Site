@@ -54,7 +54,7 @@ export default function Navbar() {
         </div>
         <div className="flex flex-row gap-10 ">
           <ul className="hidden md:flex flex-row justify-center items-center gap-3 text-xs sm:text-sm md:text-base lg:text-md xl:text-md ">
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
             <Link href="/fitness-programs">Fitness Programs</Link>
             <Link href="/weekly-plan">Weekly Plan</Link>
             <Link href="/daily-workouts">Daily Workouts</Link>

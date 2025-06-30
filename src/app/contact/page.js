@@ -1,25 +1,7 @@
-"use client";
-import React, { useState } from "react";
+
 import Image from "next/image";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    question: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
 
   const data = [
     { name: "Email", value: "contact@serendib.com" },
