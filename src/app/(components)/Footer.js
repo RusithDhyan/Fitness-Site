@@ -30,8 +30,7 @@ export default function Footer() {
           <div className="flex flex-col items-center justify-center gap-2">
             <Link href="/blogs">Health Benifits</Link>
             <Link href="/gallery">Blogs</Link>
-                        <Link href="/about">About Us</Link>
-
+            <Link href="/about">About Us</Link>
           </div>
         </div>
 
@@ -75,9 +74,7 @@ export default function Footer() {
 
       <div className="w-full bg-black text-white px-5 py-2 flex flex-col sm:flex-row items-center justify-center gap-1 text-center text-xs sm:text-sm">
         <Copyright className="w-4 sm:w-5" />
-        <span>
-          2025 Fitness Elective | Created by UCP2020/535, 536, 537 
-        </span>
+        <span>2025 Fitness Elective | Created by UCP2020/535, 536, 537</span>
       </div>
     </div>
   );
