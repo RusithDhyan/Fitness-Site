@@ -39,7 +39,7 @@ const blogPosts = [
     url: "/blogs/weekly-workout-plan",
     date: "June 20, 2025",
   },
-  
+
   {
     id: 6,
     title: "Safe Cardio for Beginners: Start at Home",
@@ -50,7 +50,6 @@ const blogPosts = [
     date: "June 15, 2025",
   },
 ];
-
 
 export default function BlogPage() {
   return (
@@ -71,12 +70,13 @@ export default function BlogPage() {
 
       <div className="flex flex-col items-center justify-center gap-4 mt-10 px-4 md:px-10 text-center">
         <h1 className="text-xl md:text-2xl font-semibold">
-          Discover Travel & Hospitality Insights
+          FitLife Blog – Your Daily Dose of Fitness & Wellness{" "}
         </h1>
         <p className="font-light max-w-6xl text-sm md:text-base">
-          Welcome to our blog! Dive into the latest stories, tips, and industry
-          updates in the world of travel, tourism, and hospitality. Whether
-          you're a traveler or a hotelier, we’ve got something for you.
+          Explore expert tips, workout routines, nutrition guides, and
+          motivational content to help you live stronger, move better, and feel
+          healthier every day. Whether you're a beginner or a fitness pro, our
+          blog has something for everyone on their wellness journey.
         </p>
       </div>
 
@@ -90,20 +90,19 @@ export default function BlogPage() {
             >
               <div className="relative h-48 md:h-60 w-full group">
                 <Link href={blog.url}>
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className=" transition-transform duration-300 group-hover:scale-105 rounded-md"
-                />
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className=" transition-transform duration-300 group-hover:scale-105 rounded-md"
+                  />
                 </Link>
               </div>
               <div className="p-2">
                 <h2 className="text-xl font-semibold mb-2">{blog.title}</h2>
                 <h5 className="text-gray-500">{blog.date}</h5>
                 <p className="text-sm md:text-base">{blog.description}</p>
-               
               </div>
             </div>
           ))}
